@@ -20,7 +20,9 @@ def mean(list):
 
 #complex function - will go through a .txt file and give the locations (first column) of peaks in the second column
 def peak_find(file):
-    plt.close()
+    #turns out plt.close causes this entire program to crash lol
+    #plt.close()
+    plt.cla()
     data_frame = pd.read_csv(file+".txt", delim_whitespace = True, names = ["Energy", "Counts"])
     counts_list = list(data_frame["Counts"])
     
